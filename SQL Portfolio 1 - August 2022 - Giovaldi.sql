@@ -322,7 +322,7 @@ from
 where
 	years = 1970;
 
--- 13. From the following table, write a SQL query to find the Nobel Prize winner in ‘Literature’ for 1970. Return winner
+-- 13. From the following table, write a SQL query to find the Nobel Prize winner in Â‘LiteratureÂ’ for 1970. Return winner
 select
 	winner
 from
@@ -331,7 +331,7 @@ where
 	subject = 'Literature'
 	and years = 1970;
 
--- 14. From the following table, write a SQL query to locate the Nobel Prize winner ‘Dennis Gabor'. Return year, subject.
+-- 14. From the following table, write a SQL query to locate the Nobel Prize winner Â‘Dennis Gabor'. Return year, subject.
 select
 	years,
 	subject
@@ -340,7 +340,7 @@ from
 where
 	winner = 'Dennis Gabor';
 
--- 15. From the following table, write a SQL query to find the Nobel Prize winners in the field of ‘Physics’ since 1950. Return winner. 
+-- 15. From the following table, write a SQL query to find the Nobel Prize winners in the field of Â‘PhysicsÂ’ since 1950. Return winner. 
 select
 	winner
 from
@@ -349,7 +349,7 @@ where
 	subject = 'Physics'
 	and years >= 1950;
 
--- 16. From the following table, write a SQL query to find the Nobel Prize winners in ‘Chemistry’ between the years 1965 and 1975. Begin and end values are included. Return year, subject, winner, and country. 
+-- 16. From the following table, write a SQL query to find the Nobel Prize winners in Â‘ChemistryÂ’ between the years 1965 and 1975. Begin and end values are included. Return year, subject, winner, and country. 
 select
 	years,
 	subject,
@@ -369,7 +369,7 @@ where
 	years>1972
 	and winner in('Menachem Begin', 'Yitzhak Rabin');
 
--- 18. From the following table, write a SQL query to retrieve the details of the winners whose first names match with the string ‘Louis’. Return year, subject, winner, country, and category.
+-- 18. From the following table, write a SQL query to retrieve the details of the winners whose first names match with the string Â‘LouisÂ’. Return year, subject, winner, country, and category.
 select
 	*
 from
@@ -439,7 +439,7 @@ order by
 	years desc,
 	winner;
 
--- 24. From the following table, write a SQL query to find the details of 1970 Nobel Prize winners. Order the results by subject, ascending except for 'Chemistry' and ‘Economics’ which will come at the end of the result set. Return year, subject, winner, country, and category.
+-- 24. From the following table, write a SQL query to find the details of 1970 Nobel Prize winners. Order the results by subject, ascending except for 'Chemistry' and Â‘EconomicsÂ’ which will come at the end of the result set. Return year, subject, winner, country, and category.
 select
 	*
 from
