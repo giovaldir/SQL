@@ -186,7 +186,47 @@ RENAME nama_kolom TO nama_kolom;
 ALTER TABLE nama_table
 ALTER COLUMN nama_kolom TYPE tipe_data;
 ```
-#  [2. SQL](https://github.com/giovaldir/SQL/blob/15f74344b7d477ed39c848aeb90968ed680ac95b/1.%20Giovaldi_SQL_19032023.sql)
+#  [2. BASIC SQL 2](https://github.com/giovaldir/SQL/blob/15f74344b7d477ed39c848aeb90968ed680ac95b/1.%20Giovaldi_SQL_19032023.sql)
+
+### Perbedaan Data Engineer, Data Analyst, Data Scientist
+- Data Engineer: Membuat dan mengoptimasi proses data yang membantu Data Scientist dan Data Analyst bekerja.
+Requirements: SQL, Python, Cloud, Distributed Computing
+            
+- Data Analyst: Memberikan nilai atau value dari hasil menganalisa Data, mengkomunikasikan hasil untuk membantu keputusan bisnis perusahaan 
+Requirements: SQL, BI Tools, Python/R
+      
+- Data Scientist: Menggunakan data untuk menyelesaikan masalah perusahaan yang lebih kompleks menggunakan teknik peramalan, modeling, matematika lanjutan, dan lainnya
+Requirements: Math, Stats, Programming Skills: Python/R,SQL, Big Data
+            
+#### Data Preparation & Import Data menggunakan PostgreSQL           
+klik Schemas -> Klik Tables -> Klik kanan di nama table -> Klik Import/Export Data
+
+Pada menu *General*
+- Centang Import, masukan Filename, format, encoding yang sesuai
+
+Pada menu *Options*
+- Hapus isian Quote, Escape
+
+Pada menu *Columns*
+- Pastikan nama-nama kolom terbaca
+
+Klik OK
+
+#### Data Understanding          
+Data apa, informasi apa yg didapat, bisnis apa, dll
+
+#### Memilih Kolom dengan SELECT FROM
+```SQL
+DROP DATABASE nama_db;
+```
+
+#### Memfilter Data dengan WHERE
+
+#### Operator Logika: AND, OR, NOT, IN
+
+#### NULL values
+
+
 
 ## Reference
 📚 YouTube
