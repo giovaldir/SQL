@@ -65,7 +65,7 @@ catatan: Char vs Varchar
 
 ### Menulis Query SQL di PostgreSQL
 
-# 1. Basic SQL
+#  [1. Basic SQL](https://github.com/giovaldir/SQL/blob/15f74344b7d477ed39c848aeb90968ed680ac95b/1.%20Giovaldi_SQL_19032023.sql)
 
 #### Memulai query PostgreSQL
 
