@@ -368,7 +368,7 @@ where
 
 ```
 
-### cari data yang memiliki sales kurang sama dengan 100
+### cari data yang memiliki sales sama dengan 100
 ```SQL
 select
 	*
