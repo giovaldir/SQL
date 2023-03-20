@@ -222,15 +222,129 @@ Klik OK
 ### Data Understanding          
 Data apa, informasi apa yg didapat, bisnis apa, dll
 
-### Memilih Kolom dengan SELECT FROM
+### Memilih Kolom dengan SELECT FROM (saat menulis query baiknya rapihkan, CTRL + SHIFT + F)
 ```SQL
-DROP DATABASE nama_db;
+SELECT kolom_a, kolom_b, kolom_c FROM nama_table;
 ```
 
-### Memfilter Data dengan WHERE
+```SQL
+SELECT customer_id, customer_name FROM data_latihan;
+```
+
+catatan: misalkan kolom ada spasi, contoh: Customer ID maka harus gunakan "Customer ID" agar tidak error
+
+```SQL
+SELECT "Customer ID", "Customer Name" FROM data_latihan;
+```
+
+### Memilih Kolom kecuali kolom tertentu
+
+```SQL
+SELECT *
+FROM table_name
+EXCEPT
+SELECT column_to_exclude
+FROM table_name;
+```
+
+### Memilih beberapa entri/baris tertentu saja
+Memfilter Data dengan WHERE
+
+```SQL
+SELECT nama_kolom,nama_kolom
+FROM table_name
+WHERE nama_kolom = '...';
+```
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" = 'Claire Gute';
+```
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales > 100;
+```
 
 ### Operator Logika: AND, OR, NOT, IN
+Klausa WHERE bisa digabungkan dengan operator AND, OR, dan NOT
 
+Operator diatas digunakan untuk memfilter baris berdasarkan satu atau lebih kondisi.
+
+- Operator *AND* akan menampilkan baris jika semua kondisi yang dipisahkan oleh AND bernilai *TRUE*.
+Contoh: Dana bantuan diperuntukkan untuk masyarakat berpenghasilan kurang dari 1 jt *DAN* memiliki keluarga. Maka apabila ingin mendapatkan Dana Bantuan, kedua kriteria/syarat hrs terpenuhi, jika salah satu tdk maka tdk bisa mendapat dana bantuan.
+- Operaor *OR* akan menampilkan baris jika salah satu kondisi yang dipisahkan oleh OR bernilai *TRUE*.
+Contoh: Penumpang kereta yang datang dari Stasiun Bandung *ATAU* Stasiun Jogja berhak mendapatkan tambahan saldo. Maka apabila penumpang berasal dari salah satu stasiun yang disebutkan, terpenuhi utk dapat tambahan saldo. 
+- Operator *NOT* akan menampilkan nilai yang tidak benar dari suatu kondisi
+
+### Tampilkan seluruh data dari tabel data_latihan yg memiliki segment konsumen dan berasal dari kota Denver
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	segment = 'Consumer'
+	and city = 'Denver';
+```
+
+### Tampilkan data dari tabel data_latihan yang berasal dari 2 kota: Henderson, Florence
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	city = 'Henderson'
+	OR city = 'Florence';
+```
+catatan: kenapa gapake *AND* ? karena seluruh baris hanya memiliki satu kota dan apabila pake AND mengasumsikan Postgre bahwa ada data yg berasal dari dua kota sekaligus
+
+### Tampilkan semua entri kecuali dari region Selatan
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	region !='South';
+```
+
+### Tampilkan semua entri yang berasal dari kota Akron, Denver, Dallas, Franklin
+
+a. cara menggunakan OR
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	city = 'Akron' or city ='Denver' or city= 'Dallas' or city= 'Franklin';
+```
+
+b. cara menggunakan IN
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	city IN('Akron','Denver', 'Dallas', 'Franklin');
+```
+
+Catatan: Operator *IN* digunakan untuk menyingkat proses *OR*
+ 
 ### NULL values
 
 
