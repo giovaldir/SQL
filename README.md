@@ -186,7 +186,7 @@ RENAME nama_kolom TO nama_kolom;
 ALTER TABLE nama_table
 ALTER COLUMN nama_kolom TYPE tipe_data;
 ```
-#  [2. BASIC SQL 2](https://github.com/giovaldir/SQL/blob/15f74344b7d477ed39c848aeb90968ed680ac95b/1.%20Giovaldi_SQL_19032023.sql)
+#  [2. BASIC SQL 2](https://github.com/giovaldir/SQL/blob/50c308121b71eef88f393f4ea368a1e08408bce3/2.%20Giovaldi_SQL_20032023.sql)
 
 ### Perbedaan Data Engineer, Data Analyst, Data Scientist
 
