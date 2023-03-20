@@ -345,7 +345,199 @@ where
 
 Catatan: Operator *IN* digunakan untuk menyingkat proses *OR*
  
-### NULL values
+#  [3. BASIC SQL 3](https://github.com/giovaldir/SQL/blob/04c931cea46e3054aa17b5787577d46e15242b5a/3.%20Giovaldi_SQL_21032023.sql)
+
+### BETWEEN 
+
+      Operator                    Condition				                    SQL Example
+    -----------------------     --------------------------------------------------      -------------------------------
+     <,>,>=,=,!=                  Standard numerical operators			         col_name != 4
+     BETWEEN....AND.....          Number is within range of two values(inclusive)        col_name BETWEEN 1.5 AND 10.5
+     NOT BETWEEN ...AND...        Number is not within range of two values               col_name NOT BETWEEN 1 AND 10
+     IN (.......)                 Number exist in a list                                 col_name IN(2,4,6)
+     NOT IN(.......)              Number doesnt exist in a list                          col_name NOT IN(1,3,5)
+
+### cari data yang memiliki sales kurang dari 100
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales < 100;
+
+```
+
+### cari data yang memiliki sales kurang sama dengan 100
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales = 100;
+```
+
+### cari data yang memilki sales lebih dari sama dengan 100 dan kurang dari sama dengan 200
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales >= 100 and sales <= 200;
+```
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales BETWEEN 100 and 200;
+```
+
+catatan: BETWEEN bersifat inclusive sehingga nilai batas yg disebutkan akan include atau msk ke dlm rentang.
+
+### Menampilkan data yang sales tidak ada di rentang 200 dan 500
+
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	sales NOT BETWEEN 200 and 500;
+```
+
+### Memilih data yang unik dengan SELECT DISTINCT
+Digunakan untuk menampilkan nilai atau data yang berbeda (tdk adanya duplikasi)
+
+### Tampilkan semua nama konsumen
+
+```SQL
+select
+	distinct "Customer Name" 
+from
+	data_latihan;
+```
+
+
+
+
+### Mencari data dengan Wildcard
+### LIKE
+digunakan apabila ingin mencari pola data, namun tidak tau persis valuenya. Contoh: hanya tau nama depannya konsumen "L" atau nama akhirnya "O" saja
+
+### % -> karakter apapun, sepanjang apapun
+
+### Mencari konsumen, yang namanya diawali dengan A
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" like 'A%';
+```
+
+### Mencari konsumen, yang namanya tengahnya Van
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" like '% Van %';
+```
+
+### Mencari konsumen, yang namanya diakhiri dengan A
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" like '%a';
+```
+
+
+### _ -> satu karakter, apapun
+
+### Mencari konsumen, yang huruf kedua dalam namanya a
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" like '_a%';
+```
+
+### Mengurutkan data dengan ORDER BY ASC/ DESC
+ASC -> kecil ke besar
+DESC -> besar ke kecil
+
+```SQL
+select
+	*
+from
+	data_latihan
+order by
+	sales desc;
+```
+```SQL
+select
+	*
+from
+	data_latihan
+order by
+	sales asc;
+```
+
+### mengurutkan dengan lebih dari satu kolom
+```SQL
+select
+	*
+from
+	data_latihan
+order by
+	sales, city;
+```
+
+### mengurutkan data tapi satunya desc dan lainnya asc
+```SQL
+select
+	*
+from
+	data_latihan
+order by
+	sales desc, city asc;
+```
+
+### Membatasi banyak row dengan LIMIT
+### tampilkan 10 data yang memiliki penjualan terbesar
+
+```SQL
+select
+	*
+from
+	data_latihan
+order by
+	sales desc
+limit 10;
+```
+
+### NULL
+```SQL
+select
+	*
+from
+	data_latihan
+where
+	"Customer Name" IS NULL ;
+```
 
 
 
